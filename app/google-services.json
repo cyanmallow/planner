@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "735182356005",
+    "firebase_url": "https://todo2-bb97d-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "todo2-bb97d",
+    "storage_bucket": "todo2-bb97d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735182356005:android:b426da1a3777ca35dec9cc",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVulqP79bRutwbUSS7Otyu3JaSr_MBY0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735182356005:android:f0eeaa6347d7e000dec9cc",
+        "android_client_info": {
+          "package_name": "com.example.planner"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVulqP79bRutwbUSS7Otyu3JaSr_MBY0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735182356005:android:98b9c94f34bf2d8ddec9cc",
+        "android_client_info": {
+          "package_name": "com.example.planner_v2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVulqP79bRutwbUSS7Otyu3JaSr_MBY0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735182356005:android:fd8866318c0eb6b7dec9cc",
+        "android_client_info": {
+          "package_name": "com.example.ryantodolist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVulqP79bRutwbUSS7Otyu3JaSr_MBY0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735182356005:android:16e104140a2bc82adec9cc",
+        "android_client_info": {
+          "package_name": "dev.jord.todo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVulqP79bRutwbUSS7Otyu3JaSr_MBY0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
