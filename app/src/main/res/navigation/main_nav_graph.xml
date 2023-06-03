@@ -36,6 +36,9 @@
             app:destination="@id/homeFragment"
             app:popUpTo="@id/signInFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signInFragment_to_resetPasFragment"
+            app:destination="@id/resetPasFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -61,5 +64,17 @@
         <action
             android:id="@+id/action_homeFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/resetPasFragment"
+        android:name="com.example.planner.fragments.ResetPasFragment"
+        android:label="ResetPasFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.planner.fragments.SettingsFragment"
+        android:label="SettingsFragment" />
 </navigation>

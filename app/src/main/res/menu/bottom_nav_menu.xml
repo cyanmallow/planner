@@ -4,15 +4,16 @@
     >
 
     <item
-        android:id="@+id/homeFragment"
+        android:id="@+id/home"
         android:icon="@drawable/baseline_favorite_24"
         android:title="Home" />
 
     <item
+        android:id="@+id/calendar"
         android:icon="@drawable/baseline_calendar_month_24"
         android:title="Calendar" />
     <item
-        android:id="@+id/trackingFragment"
+        android:id="@+id/tracking"
         android:icon="@drawable/baseline_grade_24"
         android:title="Tracking" />
 

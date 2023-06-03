@@ -7,10 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.RadioButton
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.planner.R
 import com.example.planner.databinding.FragmentHomeBinding
 import com.google.android.material.textfield.TextInputEditText
@@ -24,6 +26,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import com.google.gson.Gson
+import kotlin.coroutines.cancellation.CancellationException
 
 class HomeFragment : Fragment(), ToDoDialogFragment.OnDialogNextBtnClickListener,
     ToDoAdapter.TaskAdapterInterface {
@@ -41,6 +44,9 @@ class HomeFragment : Fragment(), ToDoDialogFragment.OnDialogNextBtnClickListener
 
     // to handle the filter
     private var filter: Int = 0
+
+    private lateinit var recyclerView:RecyclerView
+    private lateinit var searchView: SearchView
 
 
     override fun onCreateView(
@@ -67,8 +73,7 @@ class HomeFragment : Fragment(), ToDoDialogFragment.OnDialogNextBtnClickListener
         navControl = Navigation.findNavController(view)
         auth = FirebaseAuth.getInstance()
         // get the database of Tasks for the user
-        database = FirebaseDatabase.getInstance("https://planner-edf06-default-rtdb.europe-west1.firebasedatabase.app")
-        //database = FirebaseDatabase.getInstance("https://todo2-bb97d-default-rtdb.asia-southeast1.firebasedatabase.app")
+        database = FirebaseDatabase.getInstance("https://todo2-bb97d-default-rtdb.asia-southeast1.firebasedatabase.app")
 
             .reference.child("Tasks").child(auth.currentUser!!.uid)
 
@@ -109,6 +114,8 @@ class HomeFragment : Fragment(), ToDoDialogFragment.OnDialogNextBtnClickListener
             auth.signOut()
             navControl.navigate(R.id.action_homeFragment_to_signInFragment)
         }
+
+
     }
 
     private fun getTaskFromFirebase() {
@@ -198,4 +205,6 @@ class HomeFragment : Fragment(), ToDoDialogFragment.OnDialogNextBtnClickListener
             ToDoDialogFragment.TAG
         )
     }
+
+
 }

@@ -1,6 +1,7 @@
 package com.example.planner.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +12,10 @@ import androidx.navigation.Navigation
 import com.example.planner.R
 import com.example.planner.databinding.FragmentSignInBinding
 import com.example.planner.databinding.FragmentSignUpBinding
+import com.example.planner.fragments.ToDoDialogFragment.Companion.TAG
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class SignInFragment : Fragment() {
 
@@ -36,6 +40,10 @@ class SignInFragment : Fragment() {
             navControl.navigate(R.id.action_signInFragment_to_signUpFragment)
         }
 
+        binding.continueWithoutLogin.setOnClickListener{
+            navControl.navigate(R.id.action_signInFragment_to_homeFragment)
+        }
+
         binding.nextBtn.setOnClickListener {
             val email = binding.emailEt.text.toString()
             val pass = binding.passEt.text.toString()
@@ -46,6 +54,13 @@ class SignInFragment : Fragment() {
             else
                 Toast.makeText(context, "Chưa điền đầy đủ thông tin", Toast.LENGTH_SHORT).show()
         }
+
+
+        binding.quenmatkhau.setOnClickListener{
+            navControl.navigate(R.id.action_signInFragment_to_resetPasFragment)
+        }
+
+
     }
     private fun init(view: View) {
         navControl = Navigation.findNavController(view)
@@ -60,4 +75,6 @@ class SignInFragment : Fragment() {
                 Toast.makeText(context, it.exception.toString(), Toast.LENGTH_SHORT).show()
         }
     }
+
+
 }

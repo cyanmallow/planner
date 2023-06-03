@@ -53,9 +53,9 @@ class ToDoDialogFragment : DialogFragment() {
         binding.todoNextBtn.setOnClickListener {
             // get the new task
             val todoTask = binding.todoEt.text.toString()
-            val todoDate = SimpleDateFormat("yyyy-MM-dd").format(Date())
+            val todoDate = SimpleDateFormat("dd-MM-yyyy").format(Date())
             var todoIsDone :String
-            if(binding.todoIsDoneEdit.text == "Undone") {
+            if(binding.todoIsDoneEdit.text == "Chưa thực hiện") {
                 todoIsDone = "0"
             }
             else {
@@ -73,19 +73,17 @@ class ToDoDialogFragment : DialogFragment() {
                 }
 
             }else{
-                Toast.makeText(context,"Please type something",Toast.LENGTH_SHORT).show()
+                Toast.makeText(context,"Chưa nhập đủ thông tin!",Toast.LENGTH_SHORT).show()
             }
-
-
         }
 
         // when we edit change the text
         binding.todoIsDoneEdit.setOnClickListener {
-            if(binding.todoIsDoneEdit.text == "Undone") {
-                binding.todoIsDoneEdit.text = "Done"
+            if(binding.todoIsDoneEdit.text == "Chưa thực hiện") {
+                binding.todoIsDoneEdit.text = "Đã thực hiện"
             }
             else {
-                binding.todoIsDoneEdit.text = "Undone"
+                binding.todoIsDoneEdit.text = "Chưa thực hiện"
             }
         }
 
@@ -103,6 +101,9 @@ class ToDoDialogFragment : DialogFragment() {
         fun updateTask(toDoData: ToDoData, todoEdit:TextInputEditText)
     }
 
+    private fun replaceFragment(fragment: HomeFragment){
+
+    }
     companion object {
         const val TAG = "DialogFragment"
         @JvmStatic

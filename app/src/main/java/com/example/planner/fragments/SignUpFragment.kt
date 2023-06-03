@@ -60,7 +60,7 @@ class SignUpFragment : Fragment() {
                     auth.createUserWithEmailAndPassword(email,pass).addOnCompleteListener {
                         // check if the email is created or not
                         if (it.isSuccessful) {
-                            Toast.makeText(context,"Registered Successfully",Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context,"Đã đăng ký thành công!",Toast.LENGTH_SHORT).show()
                             // send user to home page
                             navControl.navigate(R.id.action_signUpFragment_to_homeFragment)
                         } else {
