@@ -55,7 +55,7 @@ class ToDoDialogFragment : DialogFragment() {
             val todoTask = binding.todoEt.text.toString()
             val todoDate = SimpleDateFormat("dd-MM-yyyy").format(Date())
             var todoIsDone :String
-            if(binding.todoIsDoneEdit.text == "Chưa thực hiện") {
+            if(binding.todoIsDoneEdit.text == "Thường") {
                 todoIsDone = "0"
             }
             else {
@@ -79,11 +79,11 @@ class ToDoDialogFragment : DialogFragment() {
 
         // when we edit change the text
         binding.todoIsDoneEdit.setOnClickListener {
-            if(binding.todoIsDoneEdit.text == "Chưa thực hiện") {
-                binding.todoIsDoneEdit.text = "Đã thực hiện"
+            if(binding.todoIsDoneEdit.text == "Thường") {
+                binding.todoIsDoneEdit.text = "Quan trọng"
             }
             else {
-                binding.todoIsDoneEdit.text = "Chưa thực hiện"
+                binding.todoIsDoneEdit.text = "Thường"
             }
         }
 
@@ -92,6 +92,10 @@ class ToDoDialogFragment : DialogFragment() {
             // remove the fragment
             dismiss()
         }
+
+//        binding.checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
+//            Toast.makeText(this,isChecked.toString(), Toast.LENGTH_SHORT).show()
+
     }
 
     // so we dont make firebase object every time we add or edit task,
@@ -100,10 +104,12 @@ class ToDoDialogFragment : DialogFragment() {
         fun saveTask(todoTask:String , todoEdit:TextInputEditText)
         fun updateTask(toDoData: ToDoData, todoEdit:TextInputEditText)
     }
+//    override fun onClick(view: View?) {
+//        checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
+//            Toast.makeText(this,isChecked.toString(), Toast.LENGTH_SHORT).show()
+//        }
+//    }
 
-    private fun replaceFragment(fragment: HomeFragment){
-
-    }
     companion object {
         const val TAG = "DialogFragment"
         @JvmStatic
@@ -115,4 +121,5 @@ class ToDoDialogFragment : DialogFragment() {
                 }
             }
     }
+
 }

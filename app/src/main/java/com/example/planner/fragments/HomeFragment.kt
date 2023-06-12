@@ -45,8 +45,6 @@ class HomeFragment : Fragment(), ToDoDialogFragment.OnDialogNextBtnClickListener
     // to handle the filter
     private var filter: Int = 0
 
-    private lateinit var recyclerView:RecyclerView
-    private lateinit var searchView: SearchView
 
 
     override fun onCreateView(
@@ -114,8 +112,6 @@ class HomeFragment : Fragment(), ToDoDialogFragment.OnDialogNextBtnClickListener
             auth.signOut()
             navControl.navigate(R.id.action_homeFragment_to_signInFragment)
         }
-
-
     }
 
     private fun getTaskFromFirebase() {
@@ -170,6 +166,13 @@ class HomeFragment : Fragment(), ToDoDialogFragment.OnDialogNextBtnClickListener
         }
         frag!!.dismiss()
     }
+
+//    override fun onClick(view: View?) {
+//        checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
+//            Toast.makeText(this,isChecked.toString(), Toast.LENGTH_SHORT).show()
+//        }
+//    }
+
 
     override fun updateTask(toDoData: ToDoData, todoEdit: TextInputEditText) {
         val map = HashMap<String, Any>()

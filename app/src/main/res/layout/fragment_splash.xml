@@ -6,20 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".fragments.SplashFragment">
 
-
-    <TextView
-        android:id="@+id/textView"
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Planner v.2"
-        android:textColor="@color/text_color"
-        android:textStyle="italic"
-        android:gravity="center_horizontal"
-        android:fontFamily="@font/inter_extra_bold"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        android:src="@drawable/menu_splash"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="-16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

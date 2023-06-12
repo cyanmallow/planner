@@ -1,7 +1,11 @@
 package com.example.planner.utils
 
+import android.graphics.Paint
+import android.graphics.Paint.STRIKE_THRU_TEXT_FLAG
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.planner.databinding.EachTodoItemBinding
 import com.google.gson.Gson
@@ -16,12 +20,22 @@ class ToDoAdapter(private val list:MutableList<ToDoData>)
         this.listener = listener
     }
 
+    // gach cac cong viec da finished
+    private fun toggleStrikeThrough(todoTask : TextView, checkBox : Boolean) {
+        if (checkBox) {
+            todoTask.paintFlags = todoTask.paintFlags or STRIKE_THRU_TEXT_FLAG
+        } else {
+            todoTask.paintFlags = todoTask.paintFlags and STRIKE_THRU_TEXT_FLAG.inv()
+        }
+    }
     inner class TaskViewHolder(val binding:EachTodoItemBinding ) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         val binding =
             EachTodoItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return TaskViewHolder(binding)
+
+
     }
 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
@@ -37,11 +51,17 @@ class ToDoAdapter(private val list:MutableList<ToDoData>)
 
                 binding.todoDate.text = todo.date
 
+//                binding.checkBox.setOnCheckedChangeListener { compoundButton, b ->  } {
+//                    binding.checkBox.paintFlags = Paint.STRIKE_THRU_TEXT_FLAG
+//                }
+//                binding.checkBox.setOnCheckedChangeListener { buttonView, isChecked ->
+//                    binding.checkBox.paintFlags = STRIKE_THRU_TEXT_FLAG
+//                }
                 if(todo.isDone == "1") {
-                    binding.todoIsDone.text = "Đã thực hiện"
+                    binding.todoIsDone.text = "Quan trọng"
                 }
                 else {
-                    binding.todoIsDone.text = "Chưa thực hiện"
+                    binding.todoIsDone.text = "Thường"
                 }
 
                 binding.editTask.setOnClickListener {
@@ -50,6 +70,16 @@ class ToDoAdapter(private val list:MutableList<ToDoData>)
 
                 binding.deleteTask.setOnClickListener {
                     listener?.onDelete(this , position)
+                }
+
+                // gach dong neu da hoan thanh
+                binding.todoTask.text = todo.desc
+                binding.checkBox.isChecked = todo.todoCheckBox
+                binding.todoDate.text = todo.date
+
+                binding.checkBox.setOnCheckedChangeListener { _, isChecked ->
+                    toggleStrikeThrough(binding.todoTask, isChecked)
+                    todo.todoCheckBox = !todo.todoCheckBox
                 }
             }
         }

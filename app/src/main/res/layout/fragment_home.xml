@@ -54,7 +54,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.884" />
 
     <RadioGroup
         android:id="@+id/filter"
@@ -78,14 +78,14 @@
             android:id="@+id/done"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Đã thực hiện"
+            android:text="Quan trọng"
             android:textColor="@color/hong_nhat" />
 
         <RadioButton
             android:id="@+id/undone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Chưa thực hiện"
+            android:text="Thường"
             android:textColor="@color/hong_nhat" />
     </RadioGroup>
 
